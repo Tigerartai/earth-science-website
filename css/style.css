@@ -144,3 +144,11 @@ body {
     margin-bottom: 0.5rem;
     color: #007BFF;
   }
+
+  nav a.active {
+    font-weight: bold;
+    color: #ffc107 !important; /* 黄色高亮 */
+  }
+
+  /* css/style.css */
+

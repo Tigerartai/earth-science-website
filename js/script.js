@@ -1,6 +1,17 @@
 // js/script.js
 
-function toggleContent() {
+// 展开/收起功能（如XRF介绍页）
+function toggleInstrument(id) {
+    const content = document.getElementById(id);
+    const arrow = document.getElementById('arrow-' + id);
+  
+    if (!content || !arrow) return;
+  
+    content.classList.toggle('active');
+    arrow.classList.toggle('rotated');
+  }
+  
+  function toggleContent() {
     const content = document.getElementById('moreContent');
     const arrow = document.getElementById('arrow');
     const btnText = document.getElementById('btnText');
@@ -16,3 +27,16 @@ function toggleContent() {
       btnText.textContent = '了解更多';
     }
   }
+  
+  // 导航栏高亮当前页
+  (function highlightCurrentPage() {
+    const currentPage = window.location.pathname.split('/').pop();
+    const links = document.querySelectorAll('nav a');
+  
+    links.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  })();

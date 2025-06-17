@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>液压式土壤取样器 - 模拟操作</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 导航栏 -->
+  <nav>
+    <a href="index.html">首页</a>
+    <a href="instruments.html">仪器汇总</a>
+    <a href="minerals.html">矿物信息</a>
+    <a href="about.html">关于我们</a>
+  </nav>
+
+  <!-- 页面内容容器 -->
+  <div class="container">
+    <h2>🔬 液压式土壤取样器</h2>
+    <p>点击下方按钮开始模拟操作：</p>
+
+    <!-- 模拟操作按钮 -->
+    <button class="btn" onclick="toggleContent()">
+      <span id="arrow" class="arrow">▼</span>
+      <span id="btnText">了解更多</span>
+    </button>
+
+    <!-- 被隐藏/展开的内容 -->
+    <div id="moreContent" class="more-content">
+      <p style="margin-top: 1.5rem;">
+        液压式土壤取样器通过液压装置钻入土壤提取样本……
+      </p>
+    </div>
+  </div>
+
+  <!-- 引入 JavaScript 文件 -->
+  <script src="js/script.js"></script>
+</body>
+</html>
