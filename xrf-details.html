@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>地球科学仪器汇总</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 导航栏 -->
+  <nav>
+    <a href="index.html">首页</a>
+    <a href="xrf-details.html">仪器汇总</a>
+    <a href="minerals.html">矿物信息</a>
+    <a href="about.html">关于我们</a>
+  </nav>
+
+  <!-- 页面内容 -->
+  <div class="container">
+    <h2>🔬 地球科学仪器汇总</h2>
+    <p>以下是常见的地球科学仪器及其用途：</p>
+
+    <!-- 仪器卡片 1：XRF -->
+    <div class="instrument-card">
+      <div class="instrument-header" onclick="toggleInstrument('xrf')">
+        <span id="arrow-xrf" class="arrow">▼</span>
+        <strong>XRF 元素分析仪</strong>
+      </div>
+      <div id="xrf" class="instrument-details">
+        <ul>
+          <li><strong>原理：</strong> 利用 X 射线激发样品产生荧光信号</li>
+          <li><strong>应用：</strong> 地质勘探、环境监测、文物考古</li>
+          <li><strong>优点：</strong> 非破坏性、便携、快速检测</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 仪器卡片 2：重力仪 -->
+    <div class="instrument-card">
+      <div class="instrument-header" onclick="toggleInstrument('gravity')">
+        <span id="arrow-gravity" class="arrow">▼</span>
+        <strong>重力仪（Gravimeter）</strong>
+      </div>
+      <div id="gravity" class="instrument-details">
+        <ul>
+          <li><strong>原理：</strong> 测量局部重力场变化</li>
+          <li><strong>应用：</strong> 探测地下密度异常区域</li>
+          <li><strong>优点：</strong> 对地下结构敏感，适合油田、矿产探测</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 仪器卡片 3：磁力仪 -->
+    <div class="instrument-card">
+      <div class="instrument-header" onclick="toggleInstrument('magnetometer')">
+        <span id="arrow-magnetometer" class="arrow">▼</span>
+        <strong>磁力仪（Magnetometer）</strong>
+      </div>
+      <div id="magnetometer" class="instrument-details">
+        <ul>
+          <li><strong>原理：</strong> 检测地磁场的变化</li>
+          <li><strong>应用：</strong> 地质填图、考古调查、矿产勘探</li>
+          <li><strong>优点：</strong> 无接触测量，适用于大面积调查</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 仪器卡片 4：地震仪 -->
+    <div class="instrument-card">
+      <div class="instrument-header" onclick="toggleInstrument('seismometer')">
+        <span id="arrow-seismometer" class="arrow">▼</span>
+        <strong>地震仪（Seismometer）</strong>
+      </div>
+      <div id="seismometer" class="instrument-details">
+        <ul>
+          <li><strong>原理：</strong> 记录地面震动波形</li>
+          <li><strong>应用：</strong> 地震监测、地壳结构分析</li>
+          <li><strong>优点：</strong> 精度高，适用于长期监测</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 引入 JS 控制逻辑 -->
+  <script src="js/script.js"></script>
+
+  <!-- 自定义 JS 函数 -->
+  <script>
+    function toggleInstrument(id) {
+      const content = document.getElementById(id);
+      const arrow = document.getElementById('arrow-' + id);
+
+      if (!content || !arrow) return;
+
+      content.classList.toggle('active');
+      arrow.classList.toggle('rotated');
+
+      // 修改按钮文字（可选）
+      const btnText = arrow.nextElementSibling.querySelector('strong');
+      if (btnText) {
+        if (content.classList.contains('active')) {
+          btnText.textContent = btnText.textContent.replace("仪器", "仪器 ▲");
+        } else {
+          btnText.textContent = btnText.textContent.replace("▲", "▼");
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

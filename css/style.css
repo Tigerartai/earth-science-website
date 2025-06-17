@@ -5,27 +5,27 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
-  }
-  
-  h2, h3 {
+}
+
+h2, h3 {
     color: #007BFF;
-  }
-  
-  p {
+}
+
+p {
     line-height: 1.6;
-  }
-  
-  ul {
+}
+
+ul {
     margin-top: 0.5rem;
-  }
-  
-  li::before {
+}
+
+li::before {
     content: "✅ ";
     color: #28a745;
-  }
-  
-  /* 容器样式 */
-  .container {
+}
+
+/* 容器样式 */
+.container {
     max-width: 900px;
     margin: auto;
     background: white;
@@ -33,28 +33,104 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-top: 2rem;
-  }
-  
-  /* 导航栏样式 */
-  nav {
+}
+
+/* 导航栏样式 */
+nav {
     background-color: #007BFF;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  nav a {
+    display: flex;
+    justify-content: center; /* 左对齐排列 */
+    align-items: center; /* 垂直居中 */
+    padding: 0.5rem; /* 减少内边距使布局更紧凑 */
+    height: 3rem; /* 进一步减少高度 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+}
+
+nav a {
     color: white;
-    margin-right: 2rem;
     text-decoration: none;
     font-weight: bold;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  /* 按钮样式 */
-  .btn {
+    padding: 0.5rem 0.75rem; /* 减少左右内边距 */
+    margin: 0 0.25rem; /* 极小的外边距来保持一点空隙 */
+    transition: color 0.3s ease; /* 颜色过渡效果 */
+    white-space: nowrap; /* 防止文字换行 */
+}
+
+nav a:hover {
+    color: #ffc107; /* 鼠标悬停时变为黄色 */
+}
+
+nav a.active {
+    color: #ffc107 !important; /* 黄色高亮 */
+}
+
+/* 下拉菜单样式 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #007BFF;
+    color: white;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    width: auto;
+    min-width: 80px;
+    text-align: center;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%; /* 水平居中关键 */
+    transform: translateX(-50%); /* 水平居中关键 */
+    background-color: #f9f9f9;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    top: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* 新增动画 */
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 30px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 180px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #0056b3;
+}
+
+/* 按钮样式 */
+.btn {
     display: inline-block;
     padding: 0.5rem 1rem;
     background-color: #007BFF;
@@ -64,91 +140,83 @@ body {
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
+}
+
+.btn:hover {
     background-color: #0056b3;
-  }
-  
-  /* 箭头旋转动画 */
-  .arrow {
-    display: inline-block;
-    transition: transform 0.5s ease;
-    margin-right: 0.5rem;
-  }
-  
-  .arrow.rotated {
-    transform: rotate(180deg);
-  }
-  
-  /* 展开/收起内容动画 */
-  .more-content {
+}
+
+/* 展开/收起内容动画 */
+.more-content {
     overflow: hidden;
-    transition: max-height 0.5s ease-out;
+    transition: max-height 0.3s ease-out;
     max-height: 0;
-  }
-  
-  .more-content.active {
+}
+
+.more-content.active {
     max-height: 500px;
-  }
-  
-  /* 仪器卡片样式 */
-  .instrument-card {
+}
+
+/* 箭头旋转动画 */
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-right: 0.5rem;
+}
+
+.arrow.rotated {
+    transform: rotate(180deg);
+}
+
+/* 仪器卡片样式 */
+.instrument-card {
     background: white;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     margin-bottom: 1rem;
     transition: transform 0.2s ease;
-  }
-  
-  .instrument-card:hover {
+}
+
+.instrument-card:hover {
     transform: translateY(-5px);
-  }
-  
-  .instrument-header {
+}
+
+.instrument-header {
     cursor: pointer;
     font-size: 1.2rem;
     display: flex;
     align-items: center;
-  }
-  
-  .instrument-details {
+}
+
+.instrument-details {
     overflow: hidden;
-    transition: max-height 0.5s ease-out;
+    transition: max-height 0.3s ease-out;
     max-height: 0;
     margin-top: 0.5rem;
-  }
-  
-  .instrument-details.active {
+}
+
+.instrument-details.active {
     max-height: 300px;
-  }
-  
-  /* 矿物卡片样式（可选） */
-  .mineral-card {
+}
+
+/* 矿物卡片样式 */
+.mineral-card {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     transition: transform 0.2s ease;
-  }
-  
-  .mineral-card:hover {
+}
+
+.mineral-card:hover {
     transform: translateY(-5px);
-  }
-  
-  .mineral-name {
+}
+
+.mineral-name {
     font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
     color: #007BFF;
-  }
-
-  nav a.active {
-    font-weight: bold;
-    color: #ffc107 !important; /* 黄色高亮 */
-  }
-
-  /* css/style.css */
-
+}

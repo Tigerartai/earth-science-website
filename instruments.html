@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>地球科学仪器汇总</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -10,7 +11,19 @@
   <!-- 导航栏 -->
   <nav>
     <a href="index.html">首页</a>
-    <a href="instruments.html">仪器汇总</a>
+  
+    <!-- 仪器汇总下拉菜单 -->
+    <div class="dropdown">
+      <a href="instruments.html" class="dropbtn">仪器汇总</a>
+      <div class="dropdown-content">
+        <a href="xrf-sim.html">XRF 元素分析仪</a>
+        <a href="microscope-sim.html">偏光显微镜</a>
+        <a href="geoelectric-sim.html">地电仪</a>
+        <a href="soil-sampler-sim.html">液压式土壤取样器</a>
+        <a href="telescope-sim.html">天文望远镜</a>
+      </div>
+    </div>
+  
     <a href="minerals.html">矿物信息</a>
     <a href="about.html">关于我们</a>
   </nav>
@@ -18,13 +31,13 @@
   <!-- 页面内容容器 -->
   <div class="container">
     <h2>🔬 地球科学仪器汇总</h2>
-    <p>以下是常见的地球科学仪器及其基本介绍。点击“了解更多”查看详细信息或跳转模拟操作页面。</p>
+    <p>以下是常见的地球科学仪器及其基本介绍：</p>
 
-    <!-- 仪器卡片 1：手持式XRF -->
+    <!-- 仪器卡片 1：XRF -->
     <div class="instrument-card">
-      <div class="instrument-header" onclick="toggleInstrument('xrf')">
+      <div class="instrument-header" onclick="toggleExpandableArea('xrf')">
         <span id="arrow-xrf" class="arrow">▼</span>
-        <strong>手持式 XRF 元素分析仪</strong>
+        <strong>XRF 元素分析仪</strong>
       </div>
       <div id="xrf" class="instrument-details">
         <ul>
@@ -38,7 +51,7 @@
 
     <!-- 仪器卡片 2：偏光显微镜 -->
     <div class="instrument-card">
-      <div class="instrument-header" onclick="toggleInstrument('microscope')">
+      <div class="instrument-header" onclick="toggleExpandableArea('microscope')">
         <span id="arrow-microscope" class="arrow">▼</span>
         <strong>偏光显微镜</strong>
       </div>
@@ -54,7 +67,7 @@
 
     <!-- 仪器卡片 3：地电仪 -->
     <div class="instrument-card">
-      <div class="instrument-header" onclick="toggleInstrument('geoelectric')">
+      <div class="instrument-header" onclick="toggleExpandableArea('geoelectric')">
         <span id="arrow-geoelectric" class="arrow">▼</span>
         <strong>地电仪</strong>
       </div>
@@ -68,9 +81,9 @@
       </div>
     </div>
 
-    <!-- 仪器卡片 4：液压式土壤取样器 -->
+    <!-- 仪器卡片 4：土壤取样器 -->
     <div class="instrument-card">
-      <div class="instrument-header" onclick="toggleInstrument('soil-sampler')">
+      <div class="instrument-header" onclick="toggleExpandableArea('soil-sampler')">
         <span id="arrow-soil-sampler" class="arrow">▼</span>
         <strong>液压式土壤取样器</strong>
       </div>
@@ -84,9 +97,9 @@
       </div>
     </div>
 
-    <!-- 仪器卡片 5：天文望远镜（可选） -->
+    <!-- 仪器卡片 5：天文望远镜 -->
     <div class="instrument-card">
-      <div class="instrument-header" onclick="toggleInstrument('telescope')">
+      <div class="instrument-header" onclick="toggleExpandableArea('telescope')">
         <span id="arrow-telescope" class="arrow">▼</span>
         <strong>天文望远镜</strong>
       </div>
@@ -102,21 +115,8 @@
 
   </div>
 
-  <!-- 引入 JS 控制逻辑 -->
+  <!-- 引入 JS 文件 -->
   <script src="js/script.js"></script>
-
-  <!-- 自定义 JS 函数 -->
-  <script>
-    function toggleInstrument(id) {
-      const content = document.getElementById(id);
-      const arrow = document.getElementById('arrow-' + id);
-
-      if (!content || !arrow) return;
-
-      content.classList.toggle('active');
-      arrow.classList.toggle('rotated');
-    }
-  </script>
 
 </body>
 </html>

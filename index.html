@@ -8,33 +8,47 @@
 </head>
 <body>
 
-<nav>
-<a href="index.html">首页</a>
-<a href="instruments.html">仪器汇总</a>
-<a href="minerals.html">矿物信息</a>
-<a href="about.html">关于我们</a>
-</nav>
+  <!-- 导航栏 -->
+  <nav>
+    <a href="index.html">首页</a>
+  
+    <!-- 仪器汇总下拉菜单 -->
+    <div class="dropdown">
+      <a href="instruments.html" class="dropbtn">仪器汇总</a>
+      <div class="dropdown-content">
+        <a href="xrf-sim.html">XRF 元素分析仪</a>
+        <a href="microscope-sim.html">偏光显微镜</a>
+        <a href="geoelectric-sim.html">地电仪</a>
+        <a href="soil-sampler-sim.html">液压式土壤取样器</a>
+        <a href="telescope-sim.html">天文望远镜</a>
+      </div>
+    </div>
+  
+    <a href="minerals.html">矿物信息</a>
+    <a href="about.html">关于我们</a>
+  </nav>
 
+  <!-- 页面内容容器 -->
   <div class="container">
     <h2>🔬 首页 - XRF简介</h2>
     <p>手持式X射线荧光光谱仪（XRF）是一种便携式元素分析设备。</p>
     <p>可用于地质勘探、环境监测、文物考古等多个领域。</p>
 
+    <!-- 展开按钮 -->
     <button class="btn" onclick="toggleContent()">
       <span id="arrow" class="arrow">▼</span>
       <span id="btnText">了解更多</span>
     </button>
 
+    <!-- 被隐藏/展开的内容 -->
     <div id="moreContent" class="more-content">
       <p style="margin-top: 1.5rem;">
-        通过X射线激发样品表面，XRF仪器能够识别从铝（Al）到铀（U）的多种元素。
-        这种技术利用X射线与物质相互作用时产生的荧光辐射，分析样品中元素的种类和含量。
-        XRF仪器不仅覆盖了广泛的元素范围，还具有非破坏性、快速、准确的特点，使其在地质勘探、环境监测、文物考古等多个领域得到广泛应用。
+        通过X射线激发样品表面，XRF仪器能够识别从 <strong>铝（Al）到铀（U）</strong> 的多种元素……
       </p>
     </div>
   </div>
 
+  <!-- 引入 JavaScript 文件 -->
   <script src="js/script.js"></script>
-
 </body>
 </html>

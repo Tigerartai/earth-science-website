@@ -1,9 +1,9 @@
 // js/script.js
 
-// 展开/收起功能（如XRF介绍页）
-function toggleInstrument(id) {
+// 展开/收起通用函数
+function toggleExpandableArea(id) {
     const content = document.getElementById(id);
-    const arrow = document.getElementById('arrow-' + id);
+    const arrow = document.getElementById(`arrow-${id}`);
   
     if (!content || !arrow) return;
   
@@ -11,6 +11,7 @@ function toggleInstrument(id) {
     arrow.classList.toggle('rotated');
   }
   
+  // 展开/收起首页内容
   function toggleContent() {
     const content = document.getElementById('moreContent');
     const arrow = document.getElementById('arrow');

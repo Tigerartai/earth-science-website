@@ -2,7 +2,8 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>手持式 XRF 元素分析仪 - 模拟操作</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XRF 元素分析仪 - 模拟操作</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -10,7 +11,19 @@
   <!-- 导航栏 -->
   <nav>
     <a href="index.html">首页</a>
-    <a href="instruments.html">仪器汇总</a>
+  
+    <!-- 仪器汇总下拉菜单 -->
+    <div class="dropdown">
+      <a href="instruments.html" class="dropbtn">仪器汇总</a>
+      <div class="dropdown-content">
+        <a href="xrf-sim.html">XRF 元素分析仪</a>
+        <a href="microscope-sim.html">偏光显微镜</a>
+        <a href="geoelectric-sim.html">地电仪</a>
+        <a href="soil-sampler-sim.html">液压式土壤取样器</a>
+        <a href="telescope-sim.html">天文望远镜</a>
+      </div>
+    </div>
+  
     <a href="minerals.html">矿物信息</a>
     <a href="about.html">关于我们</a>
   </nav>
@@ -20,7 +33,7 @@
     <h2>🔬 手持式 XRF 元素分析仪</h2>
     <p>点击下方按钮开始模拟操作：</p>
 
-    <!-- 模拟操作按钮 -->
+    <!-- 展开按钮 -->
     <button class="btn" onclick="toggleContent()">
       <span id="arrow" class="arrow">▼</span>
       <span id="btnText">了解更多</span>
@@ -31,6 +44,23 @@
       <p style="margin-top: 1.5rem;">
         通过X射线激发样品表面，XRF仪器能够识别从 <strong>铝（Al）到铀（U）</strong> 的多种元素……
       </p>
+
+      <h3>🌍 应用场景</h3>
+      <ul>
+        <li>🪨 地质勘探：快速识别岩石类型、评估矿产含量</li>
+        <li>🌱 环境监测：检测土壤重金属污染</li>
+        <li>文物考古：无损分析古代器物材质</li>
+        <li>⚙️ 工业检测：判断金属合金种类、确保RoHS合规</li>
+        <li>🧑‍🏫 教学实验：帮助学生理解元素分析原理</li>
+      </ul>
+
+      <h3>⚙️ 核心优势</h3>
+      <ul>
+        <li>✅ 快速检测，无需取样</li>
+        <li>✅ 便携设计，适合现场使用</li>
+        <li>✅ 多元素同时分析</li>
+        <li>✅ 数据可导出、便于记录与分析</li>
+      </ul>
     </div>
   </div>
 
