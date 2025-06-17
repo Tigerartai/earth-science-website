@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>地球科学仪器汇总</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 导航栏 -->
+  <nav>
+    <a href="index.html">首页</a>
+    <a href="instruments.html">仪器汇总</a>
+    <a href="minerals.html">矿物信息</a>
+    <a href="about.html">关于我们</a>
+  </nav>
+
+  <!-- 页面内容容器 -->
+  <div class="container">
+    <h2>🔬 地球科学仪器汇总</h2>
+    <p>以下是常见的地球科学仪器及其基本介绍。点击“了解更多”查看详细信息或跳转模拟操作页面。</p>
+
+    <!-- 仪器卡片 1：手持式XRF -->
+    <div class="instrument-card">
+      <div class="instrument-header" onclick="toggleInstrument('xrf')">
+        <span id="arrow-xrf" class="arrow">▼</span>
+        <strong>手持式 XRF 元素分析仪</strong>
+      </div>
+      <div id="xrf" class="instrument-details">
+        <ul>
+          <li><strong>原理：</strong> 利用 X 射线激发样品产生荧光信号</li>
+          <li><strong>应用：</strong> 地质勘探、环境监测、文物考古</li>
+          <li><strong>优点：</strong> 非破坏性、便携、快速检测</li>
+        </ul>
+        <a href="xrf-sim.html" class="btn sim-link">进入XRF模拟操作</a>
+      </div>
+    </div>
+
+    <!-- 仪器卡片 2：偏光显微镜 -->
+    <div class="instrument-card">
+      <div class="instrument-header" onclick="toggleInstrument('microscope')">
+        <span id="arrow-microscope" class="arrow">▼</span>
+        <strong>偏光显微镜</strong>
+      </div>
+      <div id="microscope" class="instrument-details">
+        <ul>
+          <li><strong>原理：</strong> 利用偏振光观察岩石薄片的晶体结构</li>
+          <li><strong>应用：</strong> 岩石鉴定、教学实验</li>
+          <li><strong>优点：</strong> 可观察微观结构，适合教学演示</li>
+        </ul>
+        <a href="microscope-sim.html" class="btn sim-link">进入偏光显微镜模拟</a>
+      </div>
+    </div>
+
+    <!-- 仪器卡片 3：地电仪 -->
+    <div class="instrument-card">
+      <div class="instrument-header" onclick="toggleInstrument('geoelectric')">
+        <span id="arrow-geoelectric" class="arrow">▼</span>
+        <strong>地电仪</strong>
+      </div>
+      <div id="geoelectric" class="instrument-details">
+        <ul>
+          <li><strong>原理：</strong> 测量地下电阻率变化以判断地质结构</li>
+          <li><strong>应用：</strong> 地下水探测、矿产勘查</li>
+          <li><strong>优点：</strong> 对浅层地质结构敏感</li>
+        </ul>
+        <a href="geoelectric-sim.html" class="btn sim-link">进入地电仪模拟操作</a>
+      </div>
+    </div>
+
+    <!-- 仪器卡片 4：液压式土壤取样器 -->
+    <div class="instrument-card">
+      <div class="instrument-header" onclick="toggleInstrument('soil-sampler')">
+        <span id="arrow-soil-sampler" class="arrow">▼</span>
+        <strong>液压式土壤取样器</strong>
+      </div>
+      <div id="soil-sampler" class="instrument-details">
+        <ul>
+          <li><strong>原理：</strong> 通过液压装置钻入土壤提取样本</li>
+          <li><strong>应用：</strong> 环境调查、土壤污染分析</li>
+          <li><strong>优点：</strong> 操作简单、取样效率高</li>
+        </ul>
+        <a href="soil-sampler-sim.html" class="btn sim-link">进入土壤取样器模拟</a>
+      </div>
+    </div>
+
+    <!-- 仪器卡片 5：天文望远镜（可选） -->
+    <div class="instrument-card">
+      <div class="instrument-header" onclick="toggleInstrument('telescope')">
+        <span id="arrow-telescope" class="arrow">▼</span>
+        <strong>天文望远镜</strong>
+      </div>
+      <div id="telescope" class="instrument-details">
+        <ul>
+          <li><strong>原理：</strong> 收集天体光线进行观测</li>
+          <li><strong>应用：</strong> 观测星体、教学演示</li>
+          <li><strong>优点：</strong> 放大倍数高，适合夜空观测</li>
+        </ul>
+        <a href="telescope-sim.html" class="btn sim-link">进入天文望远镜模拟</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 引入 JS 控制逻辑 -->
+  <script src="js/script.js"></script>
+
+  <!-- 自定义 JS 函数 -->
+  <script>
+    function toggleInstrument(id) {
+      const content = document.getElementById(id);
+      const arrow = document.getElementById('arrow-' + id);
+
+      if (!content || !arrow) return;
+
+      content.classList.toggle('active');
+      arrow.classList.toggle('rotated');
+    }
+  </script>
+
+</body>
+</html>
