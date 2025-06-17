@@ -3,51 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <title>天文望远镜 - 模拟操作</title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-<!-- 导航栏 -->
-<nav>
-    <a href="index.html">首页</a>
-  
-    <!-- 仪器汇总下拉菜单 -->
+  <!-- 导航栏 -->
+  <nav>
+    <a href="../index.html">首页</a>
     <div class="dropdown">
-      <a href="instruments.html" class="dropbtn">仪器汇总</a>
+      <a href="../instruments.html" class="dropbtn">仪器汇总</a>
       <div class="dropdown-content">
         <a href="xrf-sim.html">XRF 元素分析仪</a>
         <a href="microscope-sim.html">偏光显微镜</a>
         <a href="geoelectric-sim.html">地电仪</a>
         <a href="soil-sampler-sim.html">液压式土壤取样器</a>
-        <a href="telescope-sim.html">天文望远镜</a>
+        <a href="telescope-sim.html" class="active">天文望远镜</a>
       </div>
     </div>
-  
-    <a href="minerals.html">矿物信息</a>
-    <a href="about.html">关于我们</a>
+    <a href="../minerals.html">矿物信息</a>
+    <a href="../about.html">关于我们</a>
   </nav>
 
   <!-- 页面内容容器 -->
   <div class="container">
-    <h2>🔭 天文望远镜</h2>
-    <p>点击下方按钮开始模拟操作：</p>
+    <h2>🔭 天文望远镜 - 模拟操作</h2>
+    <p>点击下方按钮开始模拟观测夜空星体：</p>
 
     <!-- 模拟操作按钮 -->
-    <button class="btn" onclick="toggleContent()">
-      <span id="arrow" class="arrow">▼</span>
-      <span id="btnText">了解更多</span>
-    </button>
+    <button class="btn" onclick="runTelescopeSimulation()">开始观测</button>
 
-    <!-- 被隐藏/展开的内容 -->
-    <div id="moreContent" class="more-content">
-      <p style="margin-top: 1.5rem;">
-        天文望远镜收集天体光线进行观测……
-      </p>
+    <!-- 模拟星空背景 -->
+    <div class="telescope-sky" id="telescope-canvas">
+      <div class="star" id="star-1"></div>
+      <div class="star" id="star-2"></div>
+      <div class="star" id="star-3"></div>
+    </div>
+
+    <!-- 模拟结果显示 -->
+    <div class="simulation-results" id="telescope-result">
+      <h3>🌌 星体信息</h3>
+      <p>点击“开始观测”按钮后，天文望远镜将模拟观测夜空星体。</p>
     </div>
   </div>
 
-  <!-- 引入 JavaScript 文件 -->
-  <script src="js/script.js"></script>
+  <!-- 引入 JS 文件 -->
+  <script src="../js/script.js"></script>
 </body>
 </html>

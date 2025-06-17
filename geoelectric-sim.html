@@ -3,54 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <title>地电仪 - 模拟操作</title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-<!-- 导航栏 -->
-<nav>
-    <a href="index.html">首页</a>
-  
-    <!-- 仪器汇总下拉菜单 -->
+  <!-- 导航栏 -->
+  <nav>
+    <a href="../index.html">首页</a>
     <div class="dropdown">
-      <a href="instruments.html" class="dropbtn">仪器汇总</a>
+      <a href="../instruments.html" class="dropbtn">仪器汇总</a>
       <div class="dropdown-content">
         <a href="xrf-sim.html">XRF 元素分析仪</a>
         <a href="microscope-sim.html">偏光显微镜</a>
-        <a href="geoelectric-sim.html">地电仪</a>
+        <a href="geoelectric-sim.html" class="active">地电仪</a>
         <a href="soil-sampler-sim.html">液压式土壤取样器</a>
         <a href="telescope-sim.html">天文望远镜</a>
       </div>
     </div>
-  
-    <a href="minerals.html">矿物信息</a>
-    <a href="about.html">关于我们</a>
+    <a href="../minerals.html">矿物信息</a>
+    <a href="../about.html">关于我们</a>
   </nav>
 
   <!-- 页面内容容器 -->
   <div class="container">
-    <h2>🔬 地电仪</h2>
-    <p>点击下方按钮开始模拟操作：</p>
-
+    <h2>⚡ 地电仪 - 模拟操作</h2>
+    <p>点击下方按钮开始模拟地下电阻率测量：</p>
 
     <!-- 模拟操作按钮 -->
-    <button class="btn" onclick="toggleContent()">
-      <span id="arrow" class="arrow">▼</span>
-      <span id="btnText">了解更多</span>
-    </button>
+    <button class="btn" onclick="runGeoelectricSimulation()">开始测量</button>
 
-    <!-- 被隐藏/展开的内容 -->
-    <div id="moreContent" class="more-content">
-      <p style="margin-top: 1.5rem;">
-        地电仪通过测量地下电阻率变化来判断地质结构，是地球物理勘探领域的重要工具。其工作原理基于不同地质体的导电性差异 —— 岩石、土壤、含水层等物质因矿物成分、含水量、孔隙结构的不同，呈现出迥异的电阻率特征。例如，富含金属矿物的矿体往往电阻率较低，而干燥的花岗岩则表现为高电阻率。地电仪向地下发射人工电流，通过布置在地表的电极采集电流产生的电位差，进而计算出地下介质的电阻率分布。
-实际勘探中，地电仪可采用多种测量装置，如对称四极装置、偶极装置等，每种装置各有其适用场景。对于浅层地质调查，通常选用电极间距较小的装置，以便获取更精细的浅部结构信息；而针对深部构造探测，则需增大电极间距，让电流穿透更深地层。通过对测量数据进行反演计算，技术人员能够绘制出地下电阻率断面图或三维模型，直观呈现地质体的形态、埋深与分布规律。
-在地质灾害预警方面，地电仪发挥着不可替代的作用。当山体滑坡、地面沉降等灾害发生前，岩土体的含水量、孔隙压力等参数会发生变化，导致电阻率异常波动。通过长期监测电阻率的动态变化，结合其他监测数据，能够提前捕捉灾害前兆，为防灾减灾提供关键预警。此外，地电仪在寻找地下水、探测古遗址、监测地下污染扩散等领域也有广泛应用，凭借其非侵入式、效率高、成本可控的特点，成为地质工作者探索地下奥秘的得力助手。 随着技术的不断进步，地电仪的测量精度和数据处理能力持续提升，未来将在更多领域发挥重要价值。
-      </p>
+    <!-- 模拟数据图表 -->
+    <div class="resistivity-chart" id="resistivity-chart">
+      <div class="layer" style="height: 0%; background-color: #28a745;"></div>
+      <div class="layer" style="height: 0%; background-color: #28a745;"></div>
+      <div class="layer" style="height: 0%; background-color: #28a745;"></div>
+    </div>
+
+    <!-- 模拟结果显示 -->
+    <div class="simulation-results" id="geoelectric-result">
+      <h3>📊 测量结果</h3>
+      <p>点击“开始测量”按钮后，地电仪将模拟测量地下电阻率分布。</p>
     </div>
   </div>
 
-  <!-- 引入 JavaScript 文件 -->
-  <script src="js/script.js"></script>
+  <!-- 引入 JS 文件 -->
+  <script src="../js/script.js"></script>
 </body>
 </html>

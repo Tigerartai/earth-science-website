@@ -11,60 +11,61 @@
   <!-- 导航栏 -->
   <nav>
     <a href="index.html">首页</a>
-  
-    <!-- 仪器汇总下拉菜单 -->
+
+    <!-- 下拉菜单 -->
     <div class="dropdown">
       <a href="instruments.html" class="dropbtn">仪器汇总</a>
       <div class="dropdown-content">
-        <a href="xrf-sim.html">XRF 元素分析仪</a>
+        <a href="xrf-sim.html" class="active">XRF 元素分析仪</a>
         <a href="microscope-sim.html">偏光显微镜</a>
         <a href="geoelectric-sim.html">地电仪</a>
         <a href="soil-sampler-sim.html">液压式土壤取样器</a>
         <a href="telescope-sim.html">天文望远镜</a>
       </div>
     </div>
-  
+
     <a href="minerals.html">矿物信息</a>
     <a href="about.html">关于我们</a>
   </nav>
 
   <!-- 页面内容容器 -->
   <div class="container">
-    <h2>🔬 手持式 XRF 元素分析仪</h2>
-    <p>点击下方按钮开始模拟操作：</p>
+    <h2>🔬 手持式 XRF 元素分析仪 - 模拟操作</h2>
+    <p>点击下方按钮开始模拟 XRF 检测过程：</p>
 
-    <!-- 展开按钮 -->
-    <button class="btn" onclick="toggleContent()">
-      <span id="arrow" class="arrow">▼</span>
-      <span id="btnText">了解更多</span>
+    <!-- 模拟操作按钮 -->
+    <button class="btn" onclick="startXRFSimulation()">
+      开始模拟检测
     </button>
 
-    <!-- 被隐藏/展开的内容 -->
-    <div id="moreContent" class="more-content">
-      <p style="margin-top: 1.5rem;">
-        通过X射线激发样品表面，XRF仪器能够识别从 <strong>铝（Al）到铀（U）</strong> 的多种元素……
-      </p>
+    <!-- 模拟结果显示区域 -->
+    <div id="simulation-results" class="simulation-box">
+      <h3>📊 检测结果</h3>
+      <p>点击“开始模拟检测”按钮后，XRF 将模拟检测样品表面的元素组成。</p>
+    </div>
 
-      <h3>🌍 应用场景</h3>
-      <ul>
-        <li>🪨 地质勘探：快速识别岩石类型、评估矿产含量</li>
-        <li>🌱 环境监测：检测土壤重金属污染</li>
-        <li>文物考古：无损分析古代器物材质</li>
-        <li>⚙️ 工业检测：判断金属合金种类、确保RoHS合规</li>
-        <li>🧑‍🏫 教学实验：帮助学生理解元素分析原理</li>
-      </ul>
+    <!-- 模拟动画区域 -->
+    <div class="simulation-animation" id="animation-area">
+      <div class="xrf-beam" id="xrf-beam"></div>
+    </div>
 
-      <h3>⚙️ 核心优势</h3>
-      <ul>
-        <li>✅ 快速检测，无需取样</li>
-        <li>✅ 便携设计，适合现场使用</li>
-        <li>✅ 多元素同时分析</li>
-        <li>✅ 数据可导出、便于记录与分析</li>
-      </ul>
+    <!-- 模拟数据表格 -->
+    <div class="results-table" id="results-table">
+      <table>
+        <thead>
+          <tr>
+            <th>元素</th>
+            <th>浓度 (%)</th>
+          </tr>
+        </thead>
+        <tbody id="results-body">
+          <tr><td>-</td><td>-</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <!-- 引入 JavaScript 文件 -->
+  <!-- 引入 JS 文件 -->
   <script src="js/script.js"></script>
 </body>
 </html>

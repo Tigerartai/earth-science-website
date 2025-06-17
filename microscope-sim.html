@@ -3,51 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <title>偏光显微镜 - 模拟操作</title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-<!-- 导航栏 -->
-<nav>
-    <a href="index.html">首页</a>
-  
-    <!-- 仪器汇总下拉菜单 -->
+  <!-- 导航栏 -->
+  <nav>
+    <a href="../index.html">首页</a>
     <div class="dropdown">
-      <a href="instruments.html" class="dropbtn">仪器汇总</a>
+      <a href="../instruments.html" class="dropbtn">仪器汇总</a>
       <div class="dropdown-content">
         <a href="xrf-sim.html">XRF 元素分析仪</a>
-        <a href="microscope-sim.html">偏光显微镜</a>
+        <a href="microscope-sim.html" class="active">偏光显微镜</a>
         <a href="geoelectric-sim.html">地电仪</a>
         <a href="soil-sampler-sim.html">液压式土壤取样器</a>
         <a href="telescope-sim.html">天文望远镜</a>
       </div>
     </div>
-  
-    <a href="minerals.html">矿物信息</a>
-    <a href="about.html">关于我们</a>
+    <a href="../minerals.html">矿物信息</a>
+    <a href="../about.html">关于我们</a>
   </nav>
 
   <!-- 页面内容容器 -->
   <div class="container">
-    <h2>🔬 偏光显微镜</h2>
-    <p>点击下方按钮开始模拟操作：</p>
+    <h2>🔬 偏光显微镜 - 模拟操作</h2>
+    <p>点击下方按钮开始模拟偏振光观察岩石薄片：</p>
 
     <!-- 模拟操作按钮 -->
-    <button class="btn" onclick="toggleContent()">
-      <span id="arrow" class="arrow">▼</span>
-      <span id="btnText">了解更多</span>
-    </button>
+    <button class="btn" onclick="startMicroscopeSimulation()">开始偏振光观察</button>
 
-    <!-- 被隐藏/展开的内容 -->
-    <div id="moreContent" class="more-content">
-      <p style="margin-top: 1.5rem;">
-        偏光显微镜利用偏振光观察岩石薄片的晶体结构……
-      </p>
+    <!-- 模拟动画区域 -->
+    <div class="microscope-animation" id="microscope-canvas">
+      <div class="thin-section" id="thin-section"></div>
+    </div>
+
+    <!-- 模拟结果显示区域 -->
+    <div class="simulation-results" id="microscope-result">
+      <h3>🪨 观察结果</h3>
+      <p>正在模拟偏振光下的石英晶体……</p>
     </div>
   </div>
 
-  <!-- 引入 JavaScript 文件 -->
-  <script src="js/script.js"></script>
+  <!-- 引入 JS 文件 -->
+  <script src="../js/script.js"></script>
 </body>
 </html>
