@@ -42,6 +42,8 @@ function toggleExpandableArea(id) {
     });
   })();
 
+  
+
   // 模拟 XRF 检测（示例）
 function startXRFSimulation() {
     const beam = document.getElementById('xrf-beam');
